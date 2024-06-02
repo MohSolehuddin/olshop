@@ -17,6 +17,9 @@
 }
 
 body {
+  font-family: "Kanit", sans-serif;
+  font-weight: 500;
+  font-style: normal;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,

@@ -22,8 +22,8 @@ const HeaderContainer = ({ children }: { children: React.ReactNode }) => {
   return (
     <header
       className={`${
-        isScrolled ? "bg-slate-100 shadow-sm" : ""
-      } flex fixed w-screen h-12 text-zinc-700 text-lg justify-between px-7 place-items-center`}>
+        isScrolled ? "shadow-sm bg-zinc-800" : ""
+      } flex fixed w-screen h-12 text-[#00feff] text-lg justify-between px-12 place-items-center`}>
       {children}
     </header>
   );
@@ -32,12 +32,18 @@ const HeaderContainer = ({ children }: { children: React.ReactNode }) => {
 const Header = () => {
   return (
     <HeaderContainer>
-      <Image src="/logo.png" alt="icon" className="w-8" />
-      <ul className="flex flex-row justify-between gap-2">
-        <li className="font-bold">Home</li>
-        <li className="font-bold">About</li>
-        <li className="font-bold">Contact</li>
-        <li className="font-bold">Product</li>
+      <Image
+        src="/logo.png"
+        alt="icon"
+        className="w-8"
+        width={40}
+        height={40}
+      />
+      <ul className="flex flex-row justify-between gap-3">
+        <li className="cursor-pointer hover:text-sky-400">Home</li>
+        <li className="cursor-pointer hover:text-sky-400">About</li>
+        <li className="fcursor-pointer hover:text-sky-400">Contact</li>
+        <li className="cursor-pointer hover:text-sky-400">Product</li>
       </ul>
     </HeaderContainer>
   );

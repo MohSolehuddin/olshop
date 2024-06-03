@@ -1,11 +1,13 @@
 import { Imprima } from "next/font/google";
 import React from "react";
 import Wellcome from "./Wellcome";
+import Stat from "./Stat";
 
 const Main = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="h-[1000px] bg-gray-100 text-zinc-900 px-2">
-      <Wellcome>hai</Wellcome>
+    <main className="bg-neutral-50">
+      <Wellcome>Msytc Digital Solutions</Wellcome>
+      <Stat></Stat>
       {children}
     </main>
   );

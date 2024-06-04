@@ -9,11 +9,11 @@ const Wellcome = ({
 }) => {
   return (
     <section className="wellcome overflow-hidden bg-zinc-800 min-h-screen flex place-items-center gap-0 md:gap-4 justify-center text-center flex-wrap">
-      <section className="layanan flex flex-col place-items-center w-1/2">
+      <section className="layanan flex flex-col place-items-center w-1/2 z-10">
         <Image
           src="/logo.png"
           alt="Logo toko"
-          className="rounded-full mb-5 mt-16 sm:mt-16 lg:mt-0"
+          className="rounded-full mb-5 mt-16 sm:mt-16 lg:mt-0 z-10"
           width="160"
           height="160"
         />
@@ -31,7 +31,6 @@ const Wellcome = ({
         height="300"
         alt="animation"
         className="z-10"></Image>
-      <Shape></Shape>
     </section>
   );
 };

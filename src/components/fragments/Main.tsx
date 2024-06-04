@@ -8,6 +8,7 @@ const Main = ({ children }: { children: React.ReactNode }) => {
   return (
     <main className="bg-neutral-50">
       <Wellcome>Msytc Digital Solutions</Wellcome>
+      <Shape></Shape>
       <Stat></Stat>
       {children}
     </main>

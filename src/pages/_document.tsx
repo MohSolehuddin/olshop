@@ -15,7 +15,7 @@ export default function Document() {
           rel="stylesheet"
         />
       </Head>
-      <body className=" w-screen overflow-x-hidden">
+      <body className="w-screen overflow-x-hidden">
         <Main />
         <NextScript />
       </body>

@@ -6,7 +6,7 @@ const HeaderContainer = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 80) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);

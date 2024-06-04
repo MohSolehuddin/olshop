@@ -6,7 +6,7 @@ import Shape from "./shape";
 
 const Main = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main className="bg-neutral-50">
+    <main className="bg-neutral-50 overflow-x-hidden">
       <Wellcome>Msytc Digital Solutions</Wellcome>
       <Shape></Shape>
       <Stat></Stat>

@@ -2,6 +2,7 @@ import { Imprima } from "next/font/google";
 import React from "react";
 import Wellcome from "./Wellcome";
 import Stat from "./Stat";
+import Shape from "./shape";
 
 const Main = ({ children }: { children: React.ReactNode }) => {
   return (

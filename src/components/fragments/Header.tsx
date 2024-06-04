@@ -22,8 +22,10 @@ const HeaderContainer = ({ children }: { children: React.ReactNode }) => {
   return (
     <header
       className={`${
-        isScrolled ? "shadow-sm bg-zinc-800" : ""
-      } flex fixed w-screen h-12 text-[#00feff] text-lg justify-between px-12 place-items-center`}>
+        isScrolled
+          ? "shadow-sm bg-zinc-800"
+          : "shadow-sm bg-zinc-800 sm:shadow-inherit sm:bg-inherit"
+      } flex fixed w-screen h-12 text-[#00feff] text-lg justify-between px-12 place-items-center z-50`}>
       {children}
     </header>
   );

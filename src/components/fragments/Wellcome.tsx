@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Shape from "./shape";
 
 const Wellcome = ({
   children = "Moh. Solehuddin",
@@ -7,7 +8,7 @@ const Wellcome = ({
   children: React.ReactNode;
 }) => {
   return (
-    <section className="wellcome bg-zinc-800 min-h-screen flex place-items-center gap-0 md:gap-4 justify-center text-center flex-wrap">
+    <section className="wellcome overflow-hidden bg-zinc-800 min-h-screen flex place-items-center gap-0 md:gap-4 justify-center text-center flex-wrap">
       <section className="layanan flex flex-col place-items-center w-1/2">
         <Image
           src="/logo.png"
@@ -24,7 +25,13 @@ const Wellcome = ({
           udah bisa punya website
         </p>
       </section>
-      <Image src="/coding.svg" width="300" height="300" alt="animation"></Image>
+      <Image
+        src="/coding.svg"
+        width="300"
+        height="300"
+        alt="animation"
+        className="z-10"></Image>
+      <Shape></Shape>
     </section>
   );
 };

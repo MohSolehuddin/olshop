@@ -13,7 +13,7 @@ const Wellcome = ({
         <Image
           src="/logo.png"
           alt="Logo toko"
-          className="rounded-full mb-5 mt-16 sm:mt-16 lg:mt-0 z-10"
+          className="rounded-full mb-2 mt-16 sm:mt-16 lg:mt-0 z-10"
           width="160"
           height="160"
         />

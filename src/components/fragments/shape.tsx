@@ -2,7 +2,7 @@ import React from "react";
 
 const Shape = () => {
   return (
-    <section className="md:bg-[#00feff] md:rotate-[30deg] md:w-screen md:scale-x-150 md:h-40 z-0 md:absolute md:right-0 md:top-16"></section>
+    <section className="md:bg-[#00feff] md:rotate-45 md:w-screen md:scale-x-150 md:relative md:h-20 z-0 md:bottom-1/2 md:left-[25%] "></section>
   );
 };
 

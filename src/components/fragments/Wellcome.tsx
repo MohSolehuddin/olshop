@@ -8,9 +8,9 @@ const Wellcome = ({
   children: React.ReactNode;
 }) => {
   return (
-    <section className="wellcome overflow-hidden bg-zinc-800 h-[700px] md:h-screen flex place-items-center justify-center flex-wrap">
+    <section className="wellcome overflow-hidden bg-zinc-800 h-[700px] md:h-screen flex place-items-center flex-wrap">
       <section className="mainContent flex place-items-center text-center h-screen w-full justify-center flex-wrap">
-        <section className="layanan flex flex-col place-items-center justify-start  z-10 w-full md:w-2/5">
+        <section className="layanan flex flex-col place-items-center  z-10 w-full md:w-2/5 px-12">
           <Image
             src="/logo.png"
             alt="Logo toko"
@@ -18,10 +18,10 @@ const Wellcome = ({
             width="160"
             height="160"
           />
-          <h1 className="text-[#00feff] text-start z-10 lg:text-5xl md:text-4xl sm:text-2xl text-xl">
+          <h1 className="text-[#00feff] z-10 lg:text-4xl md:text-3xl sm:text-2xl text-xl">
             {children}
           </h1>
-          <p className="text-sky-50 z-10 w-full w-8/12">
+          <p className="text-sky-50 z-10 w-full">
             Jasa pembuatan website sat set abisss, ga perlu mahal mulai 300rb
             aja udah bisa punya website
           </p>

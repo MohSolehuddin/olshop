@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import { HiMenuAlt3 } from "react-icons/hi";
 
 const HeaderContainer = ({ children }: { children: React.ReactNode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -32,6 +33,10 @@ const HeaderContainer = ({ children }: { children: React.ReactNode }) => {
 };
 
 const Header = () => {
+  const [isToggleClick, setIsToggleClick] = useState(false);
+  const handleToggleClick = () => {
+    setIsToggleClick(!isToggleClick);
+  };
   return (
     <HeaderContainer>
       <Image
@@ -41,12 +46,37 @@ const Header = () => {
         width={40}
         height={40}
       />
-      <ul className="flex flex-row justify-between gap-3">
-        <li className="cursor-pointer hover:text-sky-400">Home</li>
-        <li className="cursor-pointer hover:text-sky-400">About</li>
-        <li className="fcursor-pointer hover:text-sky-400">Contact</li>
-        <li className="cursor-pointer hover:text-sky-400">Product</li>
+      <ul
+        className={`flex-row justify-between gap-3 md:flex ${
+          isToggleClick
+            ? "absolute left-0 top-0 h-fit flex place-items-center flex-col py-12 w-1/2 mt-12 text-center bg-zinc-800"
+            : "hidden"
+        }`}>
+        <li
+          className="cursor-pointer hover:text-sky-400"
+          onClick={handleToggleClick}>
+          Home
+        </li>
+        <li
+          className="cursor-pointer hover:text-sky-400"
+          onClick={handleToggleClick}>
+          About
+        </li>
+        <li
+          className="fcursor-pointer hover:text-sky-400"
+          onClick={handleToggleClick}>
+          Contact
+        </li>
+        <li
+          className="cursor-pointer hover:text-sky-400"
+          onClick={handleToggleClick}>
+          Product
+        </li>
       </ul>
+      <HiMenuAlt3
+        onClick={handleToggleClick}
+        className=" text-xl cursor-pointer md:hidden"
+      />
     </HeaderContainer>
   );
 };

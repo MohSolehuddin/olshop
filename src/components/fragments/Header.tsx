@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { HiMenuAlt3 } from "react-icons/hi";
+import { IoIosCloseCircle } from "react-icons/io";
 
 const HeaderContainer = ({ children }: { children: React.ReactNode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -26,7 +27,7 @@ const HeaderContainer = ({ children }: { children: React.ReactNode }) => {
         isScrolled
           ? "shadow-sm bg-zinc-800"
           : "shadow-sm bg-zinc-800 sm:shadow-inherit sm:bg-inherit"
-      } flex fixed w-screen h-12 text-[#00feff] text-lg justify-between px-12 place-items-center z-50`}>
+      } flex fixed w-screen h-16 md:h-12 text-[#00feff] text-lg justify-between px-16 place-items-center z-50`}>
       {children}
     </header>
   );
@@ -47,10 +48,10 @@ const Header = () => {
         height={40}
       />
       <ul
-        className={`flex-row justify-between gap-3 md:flex ${
+        className={`flex-row justify-between gap-3 md:flex transition ease-in-out delay-75 duration-500 ${
           isToggleClick
-            ? "absolute left-0 top-0 h-fit flex place-items-center flex-col py-12 w-1/2 mt-12 text-center bg-zinc-800"
-            : "hidden"
+            ? "absolute left-0 top-0 h-fit flex place-items-center flex-col py-12 w-screen mt-16 md:mt-12 text-center bg-zinc-800"
+            : "h-0 -translate-y-full overflow-hidden"
         }`}>
         <li
           className="cursor-pointer hover:text-sky-400"
@@ -70,13 +71,22 @@ const Header = () => {
         <li
           className="cursor-pointer hover:text-sky-400"
           onClick={handleToggleClick}>
-          Product
+          <a href="#ScrollContainer" className="">
+            Product
+          </a>
         </li>
       </ul>
-      <HiMenuAlt3
-        onClick={handleToggleClick}
-        className=" text-xl cursor-pointer md:hidden"
-      />
+      {isToggleClick ? (
+        <IoIosCloseCircle
+          onClick={handleToggleClick}
+          className=" text-xl cursor-pointer md:hidden"
+        />
+      ) : (
+        <HiMenuAlt3
+          onClick={handleToggleClick}
+          className=" text-xl cursor-pointer md:hidden"
+        />
+      )}
     </HeaderContainer>
   );
 };

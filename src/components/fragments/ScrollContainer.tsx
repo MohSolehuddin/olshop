@@ -1,7 +1,9 @@
 export default function ScrollContainer({
   children,
+  id,
 }: {
   children: React.ReactNode;
+  id: string;
 }) {
   return (
     <section

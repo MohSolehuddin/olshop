@@ -32,16 +32,16 @@ export function CardItem({
   link: any;
 }) {
   return (
-    <section className="w-[300px] bg-slate-100 max-h-full p-1">
+    <section className="w-[300px] bg-neutral-200 rounded-md max-h-full p-1">
       <Image
-        className="w-full h-[300px]"
+        className="w-[300px] h-[300px]"
         src={img}
         alt={title}
         width={300}
         height={300}
       />
-      <h3 className="text-2xl font-bold">{title}</h3>
-      <p className="text-justify mb-4">{paragraph}</p>
+      <h3 className="text-2xl font-bold text-zinc-800">{title}</h3>
+      <p className="text-justify mb-4 text-zinc-600">{paragraph}</p>
       <Button>{children}</Button>
     </section>
   );

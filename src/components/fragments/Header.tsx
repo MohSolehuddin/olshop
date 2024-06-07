@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { HiMenuAlt3 } from "react-icons/hi";
 import { IoIosCloseCircle } from "react-icons/io";
+import { MdClose } from "react-icons/md";
 
 const HeaderContainer = ({ children }: { children: React.ReactNode }) => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -64,7 +65,7 @@ const Header = () => {
           About
         </li>
         <li
-          className="fcursor-pointer hover:text-sky-400"
+          className="cursor-pointer hover:text-sky-400"
           onClick={handleToggleClick}>
           Contact
         </li>
@@ -77,14 +78,14 @@ const Header = () => {
         </li>
       </ul>
       {isToggleClick ? (
-        <IoIosCloseCircle
+        <MdClose
           onClick={handleToggleClick}
-          className=" text-xl cursor-pointer md:hidden"
+          className=" text-xl cursor-pointer md:hidden transition duration-300 delay-75 hover:rotate-[720deg] hover:scale-125 hover:text-sky-400"
         />
       ) : (
         <HiMenuAlt3
           onClick={handleToggleClick}
-          className=" text-xl cursor-pointer md:hidden"
+          className=" text-xl cursor-pointer md:hidden transition duration-300 delay-75 hover:scale-110 hover:text-sky-400"
         />
       )}
     </HeaderContainer>

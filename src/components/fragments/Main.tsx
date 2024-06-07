@@ -12,11 +12,42 @@ const Main = ({ children }: { children: React.ReactNode }) => {
       <Wellcome>Msytc Digital Solutions</Wellcome>
       <Stat></Stat>
       <ScrollContainer id="product">
-        <CardContainer customStyle="min-h-fit">
-          <CardItem></CardItem>
-          <CardItem></CardItem>
-          <CardItem></CardItem>
-          <CardItem></CardItem>
+        <CardContainer customStyle="min-w-fit">
+          <CardItem
+            img="/solehuddin.png"
+            title="product"
+            paragraph=" hauid hsjja"
+            link="https://msytc.vercel.app">
+            handleToggleClick
+          </CardItem>
+          <CardItem
+            img="/solehuddin.png"
+            title="product"
+            paragraph=" hauid hsjja"
+            link="https://msytc.vercel.app">
+            handleToggleClick
+          </CardItem>
+          <CardItem
+            img="/solehuddin.png"
+            title="product"
+            paragraph=" hauid hsjja"
+            link="https://msytc.vercel.app">
+            handleToggleClick
+          </CardItem>
+          <CardItem
+            img="/solehuddin.png"
+            title="product"
+            paragraph=" hauid hsjja"
+            link="https://msytc.vercel.app">
+            handleToggleClick
+          </CardItem>
+          <CardItem
+            img="/solehuddin.png"
+            title="product"
+            paragraph=" hauid hsjja"
+            link="https://msytc.vercel.app">
+            handleToggleClick
+          </CardItem>
         </CardContainer>
       </ScrollContainer>
       Sc

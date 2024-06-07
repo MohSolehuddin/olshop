@@ -11,8 +11,8 @@ export function CardContainer({
   return (
     <section
       id="card-container"
-      className={`bg-slate-50 rounded-2xl p-1 mx-auto
-    h-[500px] w-full px-1 flex ${customStyle} gap-3`}>
+      className={`rounded-2xl bg-zinc-800 p-1 mx-auto
+    h-[500px] w-full px-1 flex ${customStyle} gap-3 p-3`}>
       {children}
     </section>
   );
@@ -32,7 +32,7 @@ export function CardItem({
   link: any;
 }) {
   return (
-    <section className="w-[300px] bg-neutral-200 rounded-md max-h-full p-1">
+    <section className="w-[300px] bg-neutral-100 rounded-md p-1 max-h-[460px]">
       <Image
         className="w-[300px] h-[300px]"
         src={img}

@@ -52,7 +52,7 @@ const Header = () => {
         className={`flex-row justify-between gap-3 md:flex transition ease-in-out delay-75 duration-500 ${
           isToggleClick
             ? "absolute left-0 top-0 h-fit flex place-items-center flex-col py-12 w-screen mt-16 md:mt-12 text-center bg-zinc-800"
-            : "h-0 -translate-y-full overflow-hidden"
+            : "h-0 md:h-fit -translate-y-full md:translate-y-0 overflow-hidden"
         }`}>
         <li
           className="cursor-pointer hover:text-sky-400"

@@ -8,8 +8,8 @@ export default function ScrollContainer({
   return (
     <section
       id="ScrollContainer"
-      className="w-full h-[500px]
-    overflow-x-scroll overflow-y-hidden">
+      className="w-full h-screen
+    overflow-x-scroll overflow-y-hidden flex place-items-center">
       {children}
     </section>
   );

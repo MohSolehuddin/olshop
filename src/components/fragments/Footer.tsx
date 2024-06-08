@@ -15,7 +15,7 @@ const DataFooter = {
 
 const Footer = ({ children }: { children: React.ReactNode }) => {
   return (
-    <footer className="w-screen px-20 py-12 bg-zinc-950 flex justify-center text-center flex-wrap place-items-center">
+    <footer className="w-screen px-20 py-12 bg-zinc-800 flex justify-center text-center flex-wrap place-items-center">
       <section className="w-full md:w-[30%]">
         <p className="tentang-saya text-xl text-start">Sosmad</p>
         {DataFooter.sosmad.map(function (sosmad: {

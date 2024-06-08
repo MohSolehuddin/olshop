@@ -6,6 +6,7 @@ import Shape from "./shape";
 import ScrollContainer from "./ScrollContainer";
 import { CardContainer, CardItem } from "./Card";
 import { FaWhatsappSquare } from "react-icons/fa";
+import Contact from "./Contact";
 
 const productData = [
   {
@@ -70,6 +71,7 @@ const Main = ({ children }: { children: React.ReactNode }) => {
           })}
         </CardContainer>
       </ScrollContainer>
+      <Contact></Contact>
       <section className="maps w-screen h-screen flex flex-col justify-center place-items-center bg-neutral-200 gap-10 max-md:py-4">
         <h2 className="text text-zinc-800 text-2xl">alamat kami</h2>
         <iframe

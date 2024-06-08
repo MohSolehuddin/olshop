@@ -7,12 +7,8 @@ const MainLayout = () => {
   return (
     <>
       <Header />
-      <Main>
-        <p>hai ini main</p>
-      </Main>
-      <Footer>
-        <p>ini footer </p>
-      </Footer>
+      <Main></Main>
+      <Footer></Footer>
     </>
   );
 };

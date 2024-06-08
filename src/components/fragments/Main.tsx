@@ -12,7 +12,7 @@ const productData = [
     img: "/basic_service.webp",
     title: "Kantong kering",
     paragraph:
-      "Website simple dan statis dengan fitur yang tidak begitu banyak.",
+      "Website simple dan statis dengan fitur yang tidak begitu banyak. (belum include hosting)",
     price: "Rp. 300.000 - 999.0000",
     link: "https://msytc.vercel.app",
   },
@@ -70,8 +70,8 @@ const Main = ({ children }: { children: React.ReactNode }) => {
           })}
         </CardContainer>
       </ScrollContainer>
-      <section className="maps w-screen h-screen flex flex-col justify-center place-items-center bg-neutral-200 gap-10">
-        <h2 className="text text-zinc-800">alamat kami</h2>
+      <section className="maps w-screen h-screen flex flex-col justify-center place-items-center bg-neutral-200 gap-10 max-md:py-4">
+        <h2 className="text text-zinc-800 text-2xl">alamat kami</h2>
         <iframe
           className="w-full md:w-2/3 h-full md:h-2/3"
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d247.08805420447803!2d113.6974429977409!3d-7.746383037483264!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd71e5c4fc43c07%3A0xcfdb5fd42c252605!2sJl.%20Pesanggrahan%2C%20Kec.%20Besuki%2C%20Kabupaten%20Situbondo%2C%20Jawa%20Timur%2068356!5e0!3m2!1sid!2sid!4v1717818033366!5m2!1sid!2sid"

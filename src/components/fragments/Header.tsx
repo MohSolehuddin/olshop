@@ -49,9 +49,9 @@ const Header = () => {
         height={40}
       />
       <ul
-        className={`flex-row justify-between gap-3 md:flex transition ease-in-out delay-75 duration-500 ${
+        className={`flex-row md:justify-between gap-3 flex transition ease-in-out delay-75 duration-500k md:w-fit  ${
           isToggleClick
-            ? "absolute left-0 top-0 h-fit flex place-items-center flex-col py-12 w-screen mt-16 md:mt-12 text-center bg-zinc-800"
+            ? "max-md:absolute max-md:left-0 max-md:top-0 max-md:h-fit max-md:place-items-center max-md:flex-col max-md:py-12 max-md:w-screen max-md:mt-16 max-md:text-center max-md:bg-zinc-800"
             : "h-0 md:h-fit -translate-y-full md:translate-y-0 overflow-hidden"
         }`}>
         <li

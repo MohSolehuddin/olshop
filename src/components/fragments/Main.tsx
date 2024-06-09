@@ -50,7 +50,7 @@ const productData = [
   },
 ];
 
-const Main = ({ children }: { children: React.ReactNode }) => {
+const Main = () => {
   return (
     <main className="bg-neutral-50 overflow-x-hidden">
       <Wellcome>Msytc Digital Solutions</Wellcome>
@@ -87,7 +87,6 @@ const Main = ({ children }: { children: React.ReactNode }) => {
         className="whatsapp fixed bottom-4 right-4 z-50 text-5xl bg-zinc-800 w-12 h-12 overflow-hidden rounded-md hover:scale-125 animate-bounce transition duration-200">
         <FaWhatsappSquare className="text-favBlueSky scale-125 " />
       </a>
-      {children}
     </main>
   );
 };

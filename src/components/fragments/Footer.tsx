@@ -13,7 +13,7 @@ const DataFooter = {
   coppyRight: { link: "https://msytc.vercel.app", name: "Msytc" },
 };
 
-const Footer = ({ children }: { children: React.ReactNode }) => {
+const Footer = () => {
   return (
     <footer className="w-screen px-20 py-12 bg-zinc-800 flex justify-center text-center flex-wrap place-items-center">
       <section className="w-full md:w-[30%]">

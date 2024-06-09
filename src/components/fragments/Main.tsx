@@ -80,6 +80,7 @@ const Main = ({ children }: { children: React.ReactNode }) => {
           loading="lazy"></iframe>
       </section>
       <a
+        title="link"
         href="https://wa.me/6283849079619"
         target="_blank"
         rel="noopener noreferrer"

@@ -11,11 +11,16 @@ const Contact = () => {
         <h3 className="text-center text-favBlueSky text-3xl">
           Contact me, redirect to whatsapp
         </h3>
-        <Input></Input>
-        <Input></Input>
-        <Input></Input>
-        <Input></Input>
-        <Button>click</Button>
+        <Input type="" placeholder="type your email" htmlFor="">
+          Email
+        </Input>
+        <Input type="" placeholder="" htmlFor="">
+          Password
+        </Input>
+        <Input type="" placeholder="" htmlFor="">
+          Password
+        </Input>
+        <Button>send</Button>
       </form>
     </section>
   );

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { MutableRefObject } from "react";
 interface TextAreaProps
   extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   name: string;

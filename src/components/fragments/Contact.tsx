@@ -1,18 +1,22 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Input from "../elements/Input";
 import { Button } from "../elements/Button";
 import Label from "../elements/Input/Label";
 import TextArea from "../elements/Input/TextArea";
 
 const Contact = () => {
-  let [isType, setIsType] = useState("");
-  const handleIsType = () => {
-    let name = document.getElementById("input_name")?.value;
-    let message = document.getElementById("input_message")?.value;
-    console.log(name?.nodeValue);
+  const [isType, setIsType] = useState("");
 
-    setIsType(`Assalamu'alikum, Perkenalkan nama saya ${name}, ${message}`);
+  const handleIsType = () => {
+    const name = document.getElementById("input_name") as HTMLInputElement;
+    const message = document.getElementById(
+      "input_message"
+    ) as HTMLTextAreaElement;
+    setIsType(
+      `Assalamu'alikum, Perkenalkan nama saya ${name.value}, ${message.value}`
+    );
   };
+
   return (
     <section
       className="Contact flex justify-center place-items-center flex-row w-screen h-screen bg-zinc-800 text-neutral-50 md:px-48"

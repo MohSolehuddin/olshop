@@ -8,7 +8,9 @@ const Wellcome = ({
   children: React.ReactNode;
 }) => {
   return (
-    <section className="wellcome overflow-hidden bg-zinc-800 h-screen flex place-items-center flex-wrap">
+    <section
+      className="wellcome overflow-hidden bg-zinc-800 h-screen flex place-items-center flex-wrap"
+      id="Home">
       <section className="mainContent flex place-items-center text-center h-screen w-full justify-center flex-wrap">
         <section className="layanan flex flex-col place-items-center  z-10 w-full md:w-2/5 px-12">
           <Image

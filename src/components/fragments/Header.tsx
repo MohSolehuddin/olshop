@@ -57,17 +57,23 @@ const Header = () => {
         <li
           className="cursor-pointer hover:text-sky-400"
           onClick={handleToggleClick}>
-          Home
+          <a href="#Home" className="">
+            Home
+          </a>
         </li>
         <li
           className="cursor-pointer hover:text-sky-400"
           onClick={handleToggleClick}>
-          About
+          <a href="#About" className="">
+            About
+          </a>
         </li>
         <li
           className="cursor-pointer hover:text-sky-400"
           onClick={handleToggleClick}>
-          Contact
+          <a href="#Contact" className="">
+            Contact
+          </a>
         </li>
         <li
           className="cursor-pointer hover:text-sky-400"

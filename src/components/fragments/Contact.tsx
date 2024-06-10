@@ -39,8 +39,12 @@ const Contact = () => {
             name="message"
             placeholder="type you message for Msytc Digital Solutions"></TextArea>
         </section>
-        <Button>send</Button>
-        <p className="text-white">ha{isType}</p>
+        <a
+          href={`https://api.whatsapp.com/send?phone=6283849079619&text=${isType}`}
+          target="_blank"
+          rel="noopener noreferrer">
+          <Button>send</Button>
+        </a>
       </form>
     </section>
   );

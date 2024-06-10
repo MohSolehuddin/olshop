@@ -50,7 +50,7 @@ export function CardItem({
   }, []);
 
   return (
-    <section className="w-[300px] md:w-[400px] bg-neutral-100 rounded-md min-h-[500px] max-h-full transition duration-150 ease-linear hover:scale-110 p-2">
+    <section className="w-[308px] md:w-[408px] bg-neutral-100 rounded-md min-h-[500px] max-h-full transition duration-150 ease-linear hover:scale-110 p-2">
       <section className="w-[300px] h-[300px] md:h-[400px] md:w-[400px] rounded">
         <Image
           className="h-full w-full"

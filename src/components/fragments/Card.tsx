@@ -42,10 +42,7 @@ export function CardItem({
 
   useEffect(() => {
     if (paragraphRef.current) {
-      setIsOverflow(
-        paragraphRef.current.scrollHeight > 48 &&
-          paragraphRef.current.scrollWidth < 290
-      );
+      setIsOverflow(paragraphRef.current.scrollHeight > 48);
     }
   }, []);
 

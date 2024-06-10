@@ -10,7 +10,7 @@ const Label = ({
   return (
     <label
       htmlFor={htmlFor}
-      className="text-favBlueSky peer-hover:scale-150 px-1">
+      className="text-neutral-50 peer-hover:scale-150 px-1">
       {children}
     </label>
   );

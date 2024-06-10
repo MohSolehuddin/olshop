@@ -5,21 +5,21 @@ import Label from "../elements/Input/Label";
 import TextArea from "../elements/Input/TextArea";
 
 const Contact = () => {
-  const [isType, setIsType] = useState("");
+  const [useMessage, setUseMessage] = useState("");
 
   const handleIsType = () => {
     const name = document.getElementById("input_name") as HTMLInputElement;
     const message = document.getElementById(
       "input_message"
     ) as HTMLTextAreaElement;
-    setIsType(
+    setUseMessage(
       `Assalamu'alikum, Perkenalkan nama saya ${name.value}, ${message.value}`
     );
   };
 
   return (
     <section
-      className="Contact flex justify-center place-items-center flex-row w-screen h-screen bg-zinc-800 text-neutral-50 md:px-48"
+      className="Contact flex justify-center place-items-center flex-row w-screen h-screen bg-zinc-800 text-neutral-50 px-12 md:px-48"
       id="Contact">
       <form action="/api/kirim" method="post">
         <h3 className="text-center text-neutral-50 text-3xl">
@@ -40,7 +40,7 @@ const Contact = () => {
             placeholder="type you message for Msytc Digital Solutions"></TextArea>
         </section>
         <a
-          href={`https://api.whatsapp.com/send?phone=6283849079619&text=${isType}`}
+          href={`https://api.whatsapp.com/send?phone=6283849079619&text=${useMessage}`}
           target="_blank"
           rel="noopener noreferrer">
           <Button>send</Button>

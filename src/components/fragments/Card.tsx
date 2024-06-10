@@ -61,7 +61,7 @@ export function CardItem({
       <p
         ref={paragraphRef}
         id={title}
-        className={`text-justify mb-4 text-zinc-600 ${
+        className={`text-justify mb-4 text-zinc-600 font-normal ${
           isMore ? "h-fit" : "h-12 overflow-y-hidden"
         }`}>
         {paragraph}
@@ -69,7 +69,7 @@ export function CardItem({
       {isOverflow && (
         <p
           onClick={handleIsMore}
-          className="more text-favBlueSky relative bottom-10 z-10 bg-neutral-50 w-20 left-3/4 px-6 cursor-pointer">
+          className="more text-favBlueSky relative bottom-10 z-10 bg-neutral-50 w-20 left-3/4 px-6 cursor-pointer font-bold">
           {isMore ? "Hidden..." : "More..."}
         </p>
       )}

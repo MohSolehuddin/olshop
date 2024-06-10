@@ -12,7 +12,7 @@ const InputElement = ({ type, placeholder, name, ...rest }: InputProps) => {
       name={name}
       placeholder={placeholder}
       type={type}
-      className="peer px-4 py-2 mt-2 w-full bg-zinc-900 hover:bg-zinc-950 focus:outline-none focus:scale-105 transition-all duration-300 delay-75 hover:scale-105 focus:bg-zinc-950 text-favBlueSky placeholder:text-sky-200 rounded"
+      className="px-4 py-2 mt-2 w-full bg-zinc-900 hover:bg-zinc-950 focus:outline-none focus:scale-105 transition-all duration-300 delay-75 hover:scale-105 focus:bg-zinc-950 text-favBlueSky placeholder:text-sky-200 rounded font-normal"
       {...rest}
     />
   );

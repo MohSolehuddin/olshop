@@ -63,7 +63,7 @@ const Contact = () => {
               e.preventDefault();
               alert("Tolong masukan pesan dengan benar");
             }
-            if (isBadWord(useMessage)) {
+            if (isBadWord(useMessage) === false) {
               e.preventDefault();
               alert("Tolong berkata sopan!!!");
             }

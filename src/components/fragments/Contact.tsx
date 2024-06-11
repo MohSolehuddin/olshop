@@ -1,9 +1,10 @@
-import React, { use, useRef, useState } from "react";
+import React, { useState } from "react";
 import Input from "../elements/Input";
 import { Button } from "../elements/Button";
 import Label from "../elements/Input/Label";
 import TextArea from "../elements/Input/TextArea";
 import isBadWord from "@/functions/bad_word";
+
 const Contact = () => {
   const [useMessage, setUseMessage] = useState("");
   const [isFormValid, setIsFormValid] = useState(false);
@@ -53,23 +54,24 @@ const Contact = () => {
         </section>
         <a
           href={
-            isFormValid
-              ? `https://api.whatsapp.com/send?phone=6283849079619&text=${useMessage}`
+            isFormValid && !isBadWord(useMessage)
+              ? `https://api.whatsapp.com/send?phone=6283849079619&text=${encodeURIComponent(
+                  useMessage
+                )}`
               : "#"
           }
-          about="_blank"
+          target="_blank"
           onClick={(e) => {
             if (!isFormValid) {
               e.preventDefault();
               alert("Tolong masukan pesan dengan benar");
-            }
-            if (isBadWord(useMessage) === false) {
+            } else if (isBadWord(useMessage)) {
               e.preventDefault();
               alert("Tolong berkata sopan!!!");
             }
           }}
           rel="noopener noreferrer">
-          <Button>send</Button>
+          <Button type="button">send</Button>
         </a>
       </form>
     </section>

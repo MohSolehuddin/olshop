@@ -58,22 +58,31 @@ export function CardItem({
         />
       </section>
       <h3 className="text-2xl font-bold text-zinc-800">{title}</h3>
-      <p
-        ref={paragraphRef}
-        id={title}
-        className={`text-justify mb-4 text-zinc-600 font-normal ${
-          isMore ? "h-fit" : "h-12 overflow-y-hidden"
+      <section
+        className={`text-justify mb-4 text-zinc-600 font-normal relative ${
+          isMore ? "h-fit" : "h-12 overflow-y-hidden "
         }`}>
-        {paragraph}
-      </p>
-      {isOverflow && (
-        <p
-          onClick={handleIsMore}
-          className="more text-favBlueSky relative bottom-10 z-10 bg-neutral-50 w-20 left-3/4 px-6 cursor-pointer font-bold">
-          {isMore ? "Hidden..." : "More..."}
+        <p ref={paragraphRef} id={title}>
+          <span className="paragraf">{paragraph}</span>
+          {isOverflow &&
+            (isMore ? (
+              <span
+                onClick={handleIsMore}
+                className={`more text-zinc-950 z-10 px-6 cursor-pointer font-bold`}>
+                Hidden...
+              </span>
+            ) : (
+              <p
+                onClick={handleIsMore}
+                className={`more text-zinc-950 z-10 bg-neutral-100 w-20 px-6 cursor-pointer font-bold ${
+                  isMore ? "" : "absolute bottom-0 right-0"
+                }`}>
+                More...
+              </p>
+            ))}
         </p>
-      )}
-      <Button>{children}</Button>
+      </section>
+      <Button customStyle="-mt-12">{children}</Button>
     </section>
   );
 }

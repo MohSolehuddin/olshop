@@ -13,7 +13,7 @@ const productData = [
     img: "/basic_service.webp",
     title: "Kantong kering",
     paragraph:
-      "Website simple dan statis dengan fitur yang tidak begitu banyak. (belum include hosting)",
+      "Website simple dan statis dengan fitur yang tidak begitu banyak. (belum include hosting) ",
     price: "Rp. 300.000 - 999.0000",
     link: "https://msytc.vercel.app",
   },

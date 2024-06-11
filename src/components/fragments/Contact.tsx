@@ -59,9 +59,13 @@ const Contact = () => {
           }
           about="_blank"
           onClick={(e) => {
-            if (!isFormValid && !isBadWord(useMessage)) {
+            if (!isFormValid) {
               e.preventDefault();
               alert("Tolong masukan pesan dengan benar");
+            }
+            if (isBadWord(useMessage)) {
+              e.preventDefault();
+              alert("Tolong berkata sopan!!!");
             }
           }}
           rel="noopener noreferrer">

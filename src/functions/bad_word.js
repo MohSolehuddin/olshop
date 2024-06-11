@@ -85,6 +85,6 @@ export default function isBadWord(message) {
     let BadwordUpperCase = _badWord.map((word) => {
       return word.toUpperCase();
     });
-    return !words.some((word) => wordUpperCase.includes(word));
+    return !wordUpperCase.some((word) => BadwordUpperCase.includes(word));
   }
 }

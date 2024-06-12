@@ -79,7 +79,22 @@ const _badWord = [
   "Ass",
 ];
 const reverseSameChar = (word) => {
-  let sameChar = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "*", "!"];
+  let sameChar = [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "*",
+    "!",
+    ",",
+    ".",
+  ];
   let result = "";
   for (let index = 0; index < word.length; index++) {
     if (sameChar.indexOf(word[index]) === -1) {
@@ -116,10 +131,16 @@ const reverseSameChar = (word) => {
         result += "g";
       }
       if (word[index] === "*") {
-        result += " ";
+        result += "";
       }
       if (word[index] === "!") {
-        result += " ";
+        result += "";
+      }
+      if (word[index] === ",") {
+        result += "";
+      }
+      if (word[index] === ".") {
+        result += "";
       }
     }
   }

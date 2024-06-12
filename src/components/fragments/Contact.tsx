@@ -55,10 +55,8 @@ const Contact = () => {
         <a
           href={
             isFormValid && !isBadWord(useMessage)
-              ? `https://api.whatsapp.com/send?phone=6283849079619&text=${encodeURIComponent(
-                  useMessage
-                )}`
-              : "#"
+              ? `https://api.whatsapp.com/send?phone=6283849079619&text=${useMessage}`
+              : "#Contact"
           }
           target="_blank"
           onClick={(e) => {

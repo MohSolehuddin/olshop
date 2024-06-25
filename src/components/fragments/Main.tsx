@@ -11,9 +11,9 @@ const Main = () => {
   const [productData, setProductData] = useState([
     {
       title: "Loading...",
-      img: "",
+      img: "/logo.png",
       paragraph: "Loading...",
-      link: "",
+      link: "https://msytc.vercel.app",
       price: 0,
     },
   ]);

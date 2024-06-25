@@ -1,4 +1,6 @@
 const _badWord = [
+  "anj",
+  "jancok",
   "Anjing",
   "Babi",
   "Kunyuk",
@@ -97,50 +99,54 @@ const reverseSameChar = (word) => {
   ];
   let result = "";
   for (let index = 0; index < word.length; index++) {
-    if (sameChar.indexOf(word[index]) === -1) {
-      result += word[index];
+    if (word[index] === word[index - 1]) {
+      result += "";
     } else {
-      if (word[index] === "0") {
-        result += "o";
-      }
-      if (word[index] === "1") {
-        result += "l";
-      }
-      if (word[index] === "2") {
-        result += "z";
-      }
-      if (word[index] === "3") {
-        result += "e";
-      }
-      if (word[index] === "4") {
-        result += "a";
-      }
-      if (word[index] === "5") {
-        result += "s";
-      }
-      if (word[index] === "6") {
-        result += "b";
-      }
-      if (word[index] === "7") {
-        result += "t";
-      }
-      if (word[index] === "8") {
-        result += "b";
-      }
-      if (word[index] === "9") {
-        result += "g";
-      }
-      if (word[index] === "*") {
-        result += "";
-      }
-      if (word[index] === "!") {
-        result += "";
-      }
-      if (word[index] === ",") {
-        result += "";
-      }
-      if (word[index] === ".") {
-        result += "";
+      if (sameChar.indexOf(word[index]) === -1) {
+        result += word[index];
+      } else {
+        if (word[index] === "0") {
+          result += "o";
+        }
+        if (word[index] === "1") {
+          result += "l";
+        }
+        if (word[index] === "2") {
+          result += "z";
+        }
+        if (word[index] === "3") {
+          result += "e";
+        }
+        if (word[index] === "4") {
+          result += "a";
+        }
+        if (word[index] === "5") {
+          result += "s";
+        }
+        if (word[index] === "6") {
+          result += "b";
+        }
+        if (word[index] === "7") {
+          result += "t";
+        }
+        if (word[index] === "8") {
+          result += "b";
+        }
+        if (word[index] === "9") {
+          result += "g";
+        }
+        if (word[index] === "*") {
+          result += "";
+        }
+        if (word[index] === "!") {
+          result += "";
+        }
+        if (word[index] === ",") {
+          result += "";
+        }
+        if (word[index] === ".") {
+          result += "";
+        }
       }
     }
   }

@@ -1,77 +1,57 @@
-import { Imprima } from "next/font/google";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Wellcome from "./Wellcome";
 import Stat from "./Stat";
-import Shape from "./shape";
 import ScrollContainer from "./ScrollContainer";
 import { CardContainer, CardItem } from "./Card";
 import { FaWhatsappSquare } from "react-icons/fa";
 import Contact from "./Contact";
-
-const productData = [
-  {
-    img: "/basic_service.webp",
-    title: "Kantong kering",
-    paragraph:
-      "Website simple dan statis dengan fitur yang tidak begitu banyak. (belum include hosting) ",
-    price: "Rp. 300.000 - 999.0000",
-    link: "https://msytc.vercel.app",
-  },
-  {
-    img: "/basic_service.webp",
-    title: "Basic Bundle",
-    paragraph:
-      "Website simple dan statis dengan fitur yang tidak begitu banyak.",
-    price: "Rp. 1.000.000 - 4.999.999",
-    link: "https://msytc.vercel.app",
-  },
-  {
-    img: "/dinamis_web_service.webp",
-    title: "Premium Bundle",
-    paragraph:
-      "Website dinamis dengan fitur yang cukup banyak serta include dengan database.",
-    price: "Rp. 5.000.000 - 9.999.999",
-    link: "https://msytc.vercel.app",
-  },
-  {
-    img: "/spesial_service.webp",
-    title: "Special Bundle",
-    paragraph:
-      "Website dengan kompleksitas tinggi dan juga dinamis serta fitur yang banyak.",
-    price: "Rp. 10.000.000 +",
-    link: "https://msytc.vercel.app",
-  },
-  {
-    img: "/school_service.jpg",
-    title: "Special Bundle",
-    paragraph: "Website untuk biodata kelas, statis dengan fitur seadanya.",
-    price: "Rp. 600.000",
-    link: "https://msytc.vercel.app",
-  },
-];
+import axios from "axios";
 
 const Main = () => {
+  const [productData, setProductData] = useState([
+    {
+      title: "Loading...",
+      img: "",
+      paragraph: "Loading...",
+      link: "",
+      price: 0,
+    },
+  ]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/api/products");
+        setProductData(response.data); // Assuming response.data is an array of products
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        // Handle error state if needed
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <main className="bg-neutral-50 overflow-x-hidden">
       <Wellcome>Msytc Digital Solutions</Wellcome>
-      <Stat></Stat>
+      <Stat />
       <ScrollContainer id="product">
         <CardContainer customStyle="min-w-fit">
-          {productData.map((item) => {
-            return (
-              <CardItem
-                key={item.title}
-                img={item.img}
-                title={item.title}
-                paragraph={item.paragraph}
-                link={item.link}>
-                More
-              </CardItem>
-            );
-          })}
+          {productData.map((item) => (
+            <CardItem
+              key={item.title}
+              img={`/${item.img}`}
+              title={item.title}
+              paragraph={item.paragraph}
+              link={item.link}
+              price={`Started at Rp. ${item.price.toLocaleString("ID")}`}>
+              Details
+            </CardItem>
+          ))}
         </CardContainer>
       </ScrollContainer>
-      <Contact></Contact>
+      <Contact />
       <section className="maps w-screen h-screen flex flex-col justify-center place-items-center bg-neutral-200 gap-10 max-md:py-4">
         <h2 className="text text-zinc-800 text-2xl">alamat kami</h2>
         <iframe
@@ -85,7 +65,7 @@ const Main = () => {
         target="_blank"
         rel="noopener noreferrer"
         className="whatsapp fixed bottom-4 right-4 z-50 text-5xl bg-zinc-800 w-12 h-12 overflow-hidden rounded-md hover:scale-125 animate-bounce transition duration-200">
-        <FaWhatsappSquare className="text-favBlueSky scale-125 " />
+        <FaWhatsappSquare className="text-favBlueSky scale-125" />
       </a>
     </main>
   );

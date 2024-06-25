@@ -7,7 +7,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 export const Button = ({ children, customStyle, ...rest }: ButtonProps) => {
   return (
     <button
-      className={`w-full py-2 transition duration-300 delay-75 ease-in-out text-favBlueSky bg-zinc-900 rounded-lg hover:bg-zinc-950 hover:scale-105 -mt-12 ${customStyle}`}
+      className={`w-full py-2 transition duration-300 delay-75 ease-in-out text-favBlueSky bg-zinc-900 rounded-lg hover:bg-zinc-950 hover:scale-105 ${customStyle}`}
       {...rest}>
       {children}
     </button>

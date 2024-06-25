@@ -3,7 +3,7 @@ import Input from "../elements/Input";
 import { Button } from "../elements/Button";
 import Label from "../elements/Input/Label";
 import TextArea from "../elements/Input/TextArea";
-import isBadWord from "@/functions/bad_word";
+import isBadWord from "@/utils/bad_word";
 
 const Contact = () => {
   const [useMessage, setUseMessage] = useState("");

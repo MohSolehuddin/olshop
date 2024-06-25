@@ -25,12 +25,14 @@ export function CardItem({
   paragraph,
   children,
   link,
+  price,
 }: {
   children: React.ReactNode;
   title: string;
   img: string;
   paragraph: string;
   link: any;
+  price: string;
 }) {
   const [isMore, setIsMore] = useState(false);
   const [isOverflow, setIsOverflow] = useState(false);
@@ -59,7 +61,7 @@ export function CardItem({
       </section>
       <h3 className="text-2xl font-bold text-zinc-800">{title}</h3>
       <section
-        className={`text-justify mb-4 text-zinc-600 font-normal relative ${
+        className={`text-justify mb-0 text-zinc-600 font-normal relative ${
           isMore ? "h-fit" : "h-12 overflow-y-hidden "
         }`}>
         <p ref={paragraphRef} id={title}>
@@ -82,7 +84,8 @@ export function CardItem({
             ))}
         </p>
       </section>
-      <Button customStyle="-mt-12">{children}</Button>
+      <p className="text-xl text-zinc-700">{price}</p>
+      <Button customStyle="">{children}</Button>
     </section>
   );
 }

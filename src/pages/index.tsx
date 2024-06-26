@@ -8,7 +8,7 @@ import axios from "axios";
 type ProductType = {
   title: string;
   img: string;
-  paragraph: string;
+  keterangan: string;
   link: string;
   price: number;
 };

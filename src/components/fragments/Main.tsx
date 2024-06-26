@@ -9,17 +9,17 @@ import Contact from "./Contact";
 import axios from "axios";
 
 // Define the product interface
-interface ProductType {
+type ProductType = {
   title: string;
   img: string;
   paragraph: string;
   link: string;
   price: number;
-}
+};
 
-const Main = ({
-  productData,
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Main = (props: { productData: ProductType[] }) => {
+  let { productData } = props;
+
   return (
     <main className="bg-neutral-50 overflow-x-hidden">
       <Wellcome>Msytc Digital Solutions</Wellcome>
@@ -57,28 +57,6 @@ const Main = ({
       </a>
     </main>
   );
-};
-
-export const getStaticProps: GetStaticProps<{
-  productData?: ProductType[];
-}> = async () => {
-  try {
-    const res = await axios.get("https://msytc-olshop.vercel.app/api/products");
-
-    return {
-      props: {
-        productData: res.data,
-      },
-    };
-  } catch (error) {
-    console.log(error);
-
-    return {
-      props: {
-        productData: [],
-      },
-    };
-  }
 };
 
 export default Main;

@@ -1,13 +1,15 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import Header from "../fragments/Header";
 import Footer from "../fragments/Footer";
-import Main from "../fragments/Main";
 
-const MainLayout = () => {
+interface mainType {
+  children?: ReactNode;
+}
+const MainLayout = ({ children }: mainType) => {
   return (
     <>
       <Header />
-      <Main />
+      {children}
       <Footer />
     </>
   );

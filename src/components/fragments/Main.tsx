@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+import type { GetStaticProps, InferGetStaticPropsType } from "next";
 import React from "react";
 import Wellcome from "./Wellcome";
 import Stat from "./Stat";
@@ -17,8 +17,9 @@ interface ProductType {
   price: number;
 }
 
-const Main = (props: { productData?: ProductType[] }) => {
-  const { productData } = props;
+const Main = ({
+  productData,
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
   return (
     <main className="bg-neutral-50 overflow-x-hidden">
       <Wellcome>Msytc Digital Solutions</Wellcome>
@@ -58,17 +59,26 @@ const Main = (props: { productData?: ProductType[] }) => {
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await axios.get(
-    "https://msytc-olshop.vercel.app/api/products"
-  );
-  console.log("tests", data);
+export const getStaticProps: GetStaticProps<{
+  productData?: ProductType[];
+}> = async () => {
+  try {
+    const res = await axios.get("https://msytc-olshop.vercel.app/api/products");
 
-  return {
-    props: {
-      productData: data,
-    },
-  };
+    return {
+      props: {
+        productData: res.data,
+      },
+    };
+  } catch (error) {
+    console.log(error);
+
+    return {
+      props: {
+        productData: [],
+      },
+    };
+  }
 };
 
 export default Main;

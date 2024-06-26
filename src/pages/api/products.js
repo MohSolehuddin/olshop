@@ -8,6 +8,6 @@ export default async function products(req, res) {
     res.status(200).json(productData);
   }
   setTimeout(() => {
-    global.db.disconnect();
+    global.db.close();
   }, 1000);
 }

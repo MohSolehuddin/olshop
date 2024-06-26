@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { GetStaticProps } from "next";
+import React from "react";
 import Wellcome from "./Wellcome";
 import Stat from "./Stat";
 import ScrollContainer from "./ScrollContainer";
@@ -7,38 +8,24 @@ import { FaWhatsappSquare } from "react-icons/fa";
 import Contact from "./Contact";
 import axios from "axios";
 
-const Main = () => {
-  const [productData, setProductData] = useState([
-    {
-      title: "Loading...",
-      img: "/logo.png",
-      paragraph: "Loading...",
-      link: "https://msytc.vercel.app",
-      price: 0,
-    },
-  ]);
+// Define the product interface
+interface ProductType {
+  title: string;
+  img: string;
+  paragraph: string;
+  link: string;
+  price: number;
+}
 
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("/api/products");
-        setProductData(response.data); // Assuming response.data is an array of products
-      } catch (error) {
-        console.error("Error fetching data:", error);
-        // Handle error state if needed
-      }
-    };
-
-    fetchData();
-  }, []);
-
+const Main = (props: { productData?: ProductType[] }) => {
+  const { productData } = props;
   return (
     <main className="bg-neutral-50 overflow-x-hidden">
       <Wellcome>Msytc Digital Solutions</Wellcome>
       <Stat />
       <ScrollContainer id="product">
         <CardContainer customStyle="min-w-fit">
-          {productData.map((item) => (
+          {productData?.map((item) => (
             <CardItem
               key={item.title}
               img={`/${item.img}`}
@@ -69,6 +56,17 @@ const Main = () => {
       </a>
     </main>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { data } = await axios.get("http://localhost:3000/api/products");
+  console.log("tests", data);
+
+  return {
+    props: {
+      productData: data,
+    },
+  };
 };
 
 export default Main;

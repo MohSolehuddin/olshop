@@ -59,7 +59,9 @@ const Main = (props: { productData?: ProductType[] }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const { data } = await axios.get("http://localhost:3000/api/products");
+  const { data } = await axios.get(
+    "https://msytc-olshop.vercel.app/api/products"
+  );
   console.log("tests", data);
 
   return {

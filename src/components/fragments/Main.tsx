@@ -12,7 +12,7 @@ import axios from "axios";
 type ProductType = {
   title: string;
   img: string;
-  paragraph: string;
+  keterangan: string;
   link: string;
   price: number;
 };
@@ -31,7 +31,7 @@ const Main = (props: { productData: ProductType[] }) => {
               key={item.title}
               img={`/${item.img}`}
               title={item.title}
-              paragraph={item.paragraph}
+              paragraph={item.keterangan}
               link={item.link}
               price={`Started at Rp. ${item.price.toLocaleString("ID")}`}>
               Details

@@ -1,12 +1,9 @@
-import type { GetStaticProps, InferGetStaticPropsType } from "next";
-import React from "react";
 import Wellcome from "./Wellcome";
 import Stat from "./Stat";
 import ScrollContainer from "./ScrollContainer";
 import { CardContainer, CardItem } from "./Card";
 import { FaWhatsappSquare } from "react-icons/fa";
 import Contact from "./Contact";
-import axios from "axios";
 
 // Define the product interface
 type ProductType = {
@@ -33,7 +30,9 @@ const Main = (props: { productData: ProductType[] }) => {
               title={item.title}
               paragraph={item.keterangan}
               link={item.link}
-              price={`Started at Rp. ${item.price.toLocaleString("ID")}`}>
+              price={`Started at Rp. ${item.price.toLocaleString("id-ID", {
+                currency: "IDR",
+              })}`}>
               Details
             </CardItem>
           ))}

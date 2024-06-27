@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
 import MainLayout from "@/components/layouts/MainLayout";
 import Main from "@/components/fragments/Main";
 import { GetStaticProps } from "next";
@@ -26,7 +24,9 @@ export const getStaticProps: GetStaticProps<{
   productData: ProductType[];
 }> = async () => {
   try {
-    const res = await axios.get("https://msytc-olshop.vercel.app/api/products");
+    const res = await axios.get(
+      "https://msytc-olshop.vercel.app/api/data/products"
+    );
     console.log("API Response in getStaticProps:", res.data);
 
     return {

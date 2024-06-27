@@ -15,7 +15,7 @@ export default function validToken(req: NextApiRequest, res: NextApiResponse) {
     if (err) {
       res.status(403).json({ valid: false, message: "Invalid token" });
     }
-    req.user = user;
     res.status(200).json({ valid: true, message: "Valid token" });
+    return user;
   });
 }

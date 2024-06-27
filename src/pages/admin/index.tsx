@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useEffect, useState } from "react";
 import Input from "@/components/elements/Input";
 import { Button } from "@/components/elements/Button";
@@ -75,7 +75,8 @@ const AdminPage = () => {
         setIsCorrectPassword(null);
       }
     } catch (e) {
-      if (e.response && e.response.status === 401) {
+      let error = e as AxiosError;
+      if (error.response && error.response.status === 401) {
         setIsCorrectPassword(`Invalid username or password`);
       } else {
         setIsCorrectPassword("An error occurred. Please try again.");

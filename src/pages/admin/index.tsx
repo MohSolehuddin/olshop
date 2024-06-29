@@ -15,7 +15,7 @@ const AdminPage = () => {
   const [isLoading, setisLoading] = useState(false);
   const [dataProducts, setDataProducts] = useState<ErrorType[] | any[]>([]);
   const [dataSkills, setDataSkills] = useState<ErrorType[] | any[]>([]);
-  const [dataCertificats, setDataCertificats] = useState<ErrorType[] | any[]>(
+  const [dataCertificats, setDataPortofolio] = useState<ErrorType[] | any[]>(
     []
   );
   const [isLogin, setIsLogin] = useState(false);
@@ -49,13 +49,13 @@ const AdminPage = () => {
       .then((data) => setDataProducts(data))
       .catch((e) => setDataProducts([{ error: true, errorMessage: e }]));
 
-    getData("/api/data/mySkills")
+    getData("/api/data/mySkillSet")
       .then((data) => setDataSkills(data))
       .catch((e) => setDataSkills([{ error: true, errorMessage: e }]));
 
-    getData("/api/data/certifikats")
-      .then((data) => setDataCertificats(data))
-      .catch((e) => setDataCertificats([{ error: true, errorMessage: e }]));
+    getData("/api/data/portofolio")
+      .then((data) => setDataPortofolio(data))
+      .catch((e) => setDataPortofolio([{ error: true, errorMessage: e }]));
   }, []);
 
   async function handleLogin() {

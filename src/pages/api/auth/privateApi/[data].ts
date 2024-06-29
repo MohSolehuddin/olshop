@@ -1,15 +1,30 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import MongoAtlas from "../../../utils/db";
+import MongoAtlas from "../../../../utils/db";
+import { isTokenValid } from "../validateToken";
 
-const products = async (req: NextApiRequest, res: NextApiResponse) => {
+const privateData = async (req: NextApiRequest, res: NextApiResponse) => {
+  if (!req.headers.authorization) {
+    return res.status(404).json({
+      error: true,
+      errorMessage: `Please token is required to access this API`,
+    });
+  }
+  let token = req.headers.authorization.split(" ")[1];
+  const tokenValid = await isTokenValid(token);
+
+  if (!tokenValid.status) {
+    return res.status(404).json({
+      error: true,
+      errorMessage: `Invalid token`,
+    });
+  }
   const db = new MongoAtlas(process.env.MONGODB_URI, "portofolio");
   const validCollection = ["portofolio", "mySkillSet", "products"];
 
   try {
-    // Memeriksa validitas query parameter
     if (!validCollection.includes(req.query.data as string)) {
       return res.status(404).json({
-        error: "Failed to connect to database",
+        error: true,
         errorMessage: `Query ${req.query.data} not allowed!!!`,
       });
     }
@@ -24,14 +39,14 @@ const products = async (req: NextApiRequest, res: NextApiResponse) => {
     } else {
       res.setHeader("Allow", ["GET"]);
       return res.status(405).json({
-        error: "Method not allowed",
+        error: true,
         errorMessage: `Method ${req.method} not allowed!!!`,
       });
     }
   } catch (error: any) {
     return res.status(500).json({
-      error: "Failed to connect to database",
-      errorMessage: error.message,
+      error: true,
+      errorMessage: `Failed to connect to database, error message: ${error.message}`,
     });
   } finally {
     // Tutup koneksi database setelah operasi selesai
@@ -39,4 +54,4 @@ const products = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 };
 
-export default products;
+export default privateData;

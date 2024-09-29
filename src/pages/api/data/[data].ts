@@ -34,7 +34,6 @@ const products = async (req: NextApiRequest, res: NextApiResponse) => {
       errorMessage: error.message,
     });
   } finally {
-    // Tutup koneksi database setelah operasi selesai
     await db.close();
   }
 };

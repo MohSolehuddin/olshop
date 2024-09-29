@@ -92,3 +92,7 @@ module.exports = MongoAtlas;
 //     console.log(error);
 //   }
 // })();
+
+(async () => {
+  global.db = new MongoAtlas(process.env.MONGODB_URI, "PwMg");
+})();
